@@ -44,6 +44,6 @@ The [playbook](playbook/) is the operating method I distilled from these project
 
 ## Contact
 
-**Email:** matthew.e.potts@gmail.com
+**Email:** mepotts@berkeley.com
 
 **LinkedIn:** [linkedin.com/in/matthewpotts](https://linkedin.com/in/matthewpotts)
