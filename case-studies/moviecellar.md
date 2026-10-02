@@ -96,7 +96,7 @@ The audit was read-only, over a frozen snapshot with no secrets or database acce
 
 **Unreleased work:** The combined candidate has not passed the gate, and 12 security criteria still lack runtime proof.
 
-**A narrow, young gate:** It covers web and an Android emulator. It does not cover iOS, the desktop app, store signing, or production networking. Two releases have passed through it, and the first shipped a commit that differed from the gated candidate in five files (disclosed, but not gated).
+**A narrow, young gate:** It covers web and an Android emulator. iOS has its own automated suite on a simulator, run outside the gate. Neither covers the desktop app, store signing, or production networking. Two releases have passed through the gate, and the first shipped a commit that differed from the gated candidate in five files (disclosed, but not gated).
 
 **Agents mis-report completion:** A recap blamed 38 stale knowledge dependencies on "pre-existing debt" when the sprint itself had caused them. An audit agent called an open defect resolved. I still check the work.
 
