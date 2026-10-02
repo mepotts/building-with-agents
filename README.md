@@ -1,37 +1,49 @@
 # Building with agents
 
-I'm Matthew Potts, a data scientist (11+ years) who builds software and research pipelines by directing AI coding agents: mostly Claude Code and Codex, working in parallel. **The agents write the code.** My job is deciding what to build, specifying it precisely, and designing the verification that decides what ships, because agents are fast, confident, and sometimes wrong.
-
-This repo holds write-ups of that work and the playbook I use. The product code itself is private; I'm happy to walk through any of it on a call.
+## Demo
 
 ![MovieCellar: the product, the lanes, the release gate, and a reviewer rejecting agent work](demo/moviecellar-tour.gif)
 
-*A 20-second tour. The full 2½-minute walkthrough is [demo/moviecellar-walkthrough.mp4](demo/moviecellar-walkthrough.mp4).*
+This is a 20-second tour of MovieCellar. The full 2.5-minute walkthrough is [demo/moviecellar-walkthrough.mp4](demo/moviecellar-walkthrough.mp4).
+
+## What this is
+
+I'm Matthew Potts, a data scientist. The agents write the code. I decide what to build, write the specs, and check the work. The agents are mostly Claude Code and Codex, running in parallel. They are fast and sometimes wrong, so the checks decide what ships.
+
+This repo holds write-ups of three projects and the playbook I use. The code for all three is private or local only. I can walk through any of it on a call.
 
 ## Case studies
 
-| | What it shows |
-|---|---|
-| [**MovieCellar**](case-studies/moviecellar.md) | A web, iOS, and desktop product plus a vision-model service, built in 5.5 months by a two-vendor agent fleet (now in private beta). It covers the orchestration rules, a release gate built to reject agent work, a two-round multi-agent security audit (process only), and the failures behind each rule. |
-| [**Agents auditing agents**](case-studies/agents-auditing-agents.md) | A five-agent adversarial audit of agent-written backtesting code that caught look-ahead bias (Sharpe 3.29, really 1.00) and made the evaluation harness a mandatory gate. |
-| [**FlowState**](case-studies/flowstate.md) | An audio-ML research program run under sealed evaluation, with hash-frozen gold labels and predictions scored only after freeze. It includes an experiment where frontier agents improved the median and still failed the safety screen. |
+**[MovieCellar](case-studies/moviecellar.md):** A web, iOS, and desktop app plus a vision-model service. Claude Code and Codex agents built it in 5.5 months, and it is in a private beta with no real users yet. The write-up covers the orchestration rules, a release gate that rejects agent work, a two-round multi-agent security audit (process only), and the failure behind each rule.
 
-## The playbook
+**[Agents auditing agents](case-studies/agents-auditing-agents.md):** A five-agent adversarial audit of agent-written backtesting code. It caught look-ahead bias (a Sharpe ratio of 3.29 that was really 1.00). It then audited and repaired the evaluation harness that every result in that repo must pass. The repository is local only, and the fixes are not yet committed.
 
-[`playbook/`](playbook/) is the operating method distilled from these projects, written so another team could adopt it:
+**[FlowState](case-studies/flowstate.md):** An audio-ML research project on measuring rap syllable timing, run under sealed evaluation with hash-frozen gold labels and predictions scored only after freeze. I hand-corrected the 1,061 gold labels myself. In one experiment, frontier agents improved the median error and still failed the safety screen. The repository is private, and nothing has been published or submitted.
 
-- [operating rules](playbook/operating-rules.md)
-- [verification tiers](playbook/verification-tiers.md)
-- [an exact-candidate release gate](playbook/release-gate.md)
-- [a handoff runbook](playbook/handoff-runbook.md) for resuming work across agents and vendors
-- [a catalog of agent failure modes](playbook/failure-catalog.md), with the guardrail for each
+## Playbook
+
+The [playbook](playbook/) is the operating method I distilled from these projects. It is written so another team could adopt it.
+
+- [Operating rules](playbook/operating-rules.md)
+- [Verification tiers](playbook/verification-tiers.md)
+- [An exact-candidate release gate](playbook/release-gate.md)
+- [A handoff runbook](playbook/handoff-runbook.md) for resuming work across agents and vendors
+- [A catalog of agent failure modes](playbook/failure-catalog.md), with the guardrail for each
+
+## Agent operating kit
+
+**[agent-operating-kit](https://github.com/mepotts/agent-operating-kit):** The rules and checks from the playbook, packaged as a Claude Code plugin and plain templates. It is version 0.1.0, and it has not been used on a real project yet.
 
 ## Public code
 
-- [astronomy](https://github.com/mepotts/astronomy): about 20 open-data research fronts run by agents under standing verification gates.
-- [exosat-rv](https://github.com/mepotts/exosat-rv): a radial-velocity reanalysis whose own audit withdrew its headline claims.
-- [llm-introspection](https://github.com/mepotts/llm-introspection): a concept-injection introspection experiment on Gemma-2-2B.
+**[astronomy](https://github.com/mepotts/astronomy):** About 20 open-data research fronts, run by agents under standing verification gates.
+
+**[exosat-rv](https://github.com/mepotts/exosat-rv):** A radial-velocity reanalysis. My own audit withdrew its headline claims.
+
+**[llm-introspection](https://github.com/mepotts/llm-introspection):** An experiment on whether Gemma-2-2B notices a concept injected into its activations.
 
 ## Contact
 
-matthew.e.potts@gmail.com · [linkedin.com/in/matthewpotts](https://linkedin.com/in/matthewpotts)
+**Email:** matthew.e.potts@gmail.com
+
+**LinkedIn:** [linkedin.com/in/matthewpotts](https://linkedin.com/in/matthewpotts)
