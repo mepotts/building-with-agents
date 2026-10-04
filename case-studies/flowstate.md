@@ -4,7 +4,7 @@
 
 **Result:** Median syllable-onset error fell from 42 to 18 ms beyond a fitted-offset baseline on 12 a cappella tracks. It measured 21.6 ms on 9 held-out tracks (a single-use, preregistered holdout). These are research numbers on silver-standard labels. They are not production numbers.
 
-**Frontier label refiners:** Rejected. The median improved from 34.9 to 12.9 ms, but a frozen safety screen caught 143 body labels made worse by more than 25 ms.
+**Frontier label refiners:** Rejected. The median improved from 34.9 to 12.9 ms, but a frozen safety screen caught 143 body labels (144 of all 1,061 labels) made worse by more than 25 ms.
 
 ## Problem
 

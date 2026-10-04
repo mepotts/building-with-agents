@@ -98,7 +98,7 @@ The audit was read-only, over a frozen snapshot with no secrets or database acce
 
 **A narrow, young gate:** It covers web and an Android emulator. iOS has its own automated suite on a simulator, run outside the gate. Neither covers the desktop app, store signing, or production networking. Two releases have passed through the gate, and the first shipped a commit that differed from the gated candidate in five files (disclosed, but not gated).
 
-**Agents mis-report completion:** A recap blamed 38 stale knowledge dependencies on "pre-existing debt" when the sprint itself had caused them. An audit agent called an open defect resolved. I still check the work.
+**Agents mis-report completion:** A recap blamed 38 stale knowledge dependencies on "pre-existing debt" when the sprint itself had caused them. An audit agent called an open defect resolved. So an agent's report of done doesn't count until a check or a separate reviewer agent confirms it.
 
 **Cost:** It is not cheap, and the fleet repeatedly hit vendor usage limits.
 

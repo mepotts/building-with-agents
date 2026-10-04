@@ -8,7 +8,7 @@ This is a 20-second tour of MovieCellar. The full 2.5-minute walkthrough is [dem
 
 ## What this is
 
-I'm Matthew Potts, a data scientist. The agents write the code. I decide what to build, write the specs, and check the work. The agents are mostly Claude Code and Codex, running in parallel. They are fast and sometimes wrong, so the checks decide what ships.
+I'm Matthew Potts, a data scientist. The agents write the code. I decide what to build, write the specs, and get the agents to build the checks. The agents are mostly Claude Code and Codex, running in parallel. They are fast and sometimes wrong, so the checks decide what ships.
 
 This repo holds write-ups of three projects and the playbook I use. The code for all three is private or local only. I can walk through any of it on a call.
 
