@@ -14,6 +14,8 @@ This repo holds write-ups of three projects and the playbook I use. The code for
 
 ## Case studies
 
+Each one ends with its score on the [rubric](https://github.com/mepotts/agent-operating-kit/blob/main/RUBRIC.md), gaps included.
+
 **[MovieCellar](case-studies/moviecellar.md):** A web, iOS, and desktop app plus a vision-model service. Claude Code and Codex agents built it in 5.5 months, and it is in a private beta with no real users yet. The write-up covers the orchestration rules, a release gate that rejects agent work, a two-round multi-agent security audit (process only), and the failure behind each rule.
 
 **[Agents auditing agents](case-studies/agents-auditing-agents.md):** A five-agent adversarial audit of agent-written backtesting code. It caught look-ahead bias (a Sharpe ratio of 3.29 that was really 1.00). It then audited and repaired the evaluation harness that every result in that repo must pass. The repository is local only, and the fixes are not yet committed.

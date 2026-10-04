@@ -56,6 +56,25 @@ Two frozen follow-ups tried to keep the good part. A gate that accepts a move on
 
 **Nulls:** Five methods (phone aligners, a reranker, topology, a neural sequence model) moved the median by 0.0 to 0.6 ms. A pooled +10.3 ms gain failed one registered per-song clause by 0.68 ms and stayed failed. A promising controller's shuffled-label null also passed the gate, and so did 11 of 24 nulls in that comparison.
 
+## Rubric score
+
+Scored against the [rubric](https://github.com/mepotts/agent-operating-kit/blob/main/RUBRIC.md) on 2026-10-04. Each score is the level that fits best, and the gap is what keeps it from the next level.
+
+**Levels:** 1 ask and accept, 2 spec and spot-check, 3 agent-built checks with a separate reviewer, 4 checks decide what goes out.
+
+| Criterion | Score | Evidence | Gap |
+|---|---|---|---|
+| Spec | 4 | The screen and the stop rule were set before scoring, and the rerun harness refuses to start until six owner decisions are committed. | Top level |
+| Checks | 4 | SHA-256 snapshots, hash-sealed agent responses, two independent scorers, and offline CI that checks the safeguards still exist. | Top level |
+| Review | 3 | A 16-agent fleet re-derived the headline number, and a later code audit caught a clock mismatch. | The clock mismatch surfaced three days after the result. |
+| Evidence | 4 | A fresh GPU recompute regenerated all 12 cache files byte for byte, and every run manifest pins its data hash. | Top level |
+| Risk and approvals | 4 | Gold labels are read-only to agents, and writes need an owner token checked against a server-side secret that fails closed. | Top level |
+| Failures to rules | 3 | The silver labels produced a stop rule, and the clock mismatch produced an integrity notice and a preregistered rerun. | This write-up doesn't show a review of the failures for patterns. |
+
+Not scored, because this write-up doesn't show them: context, handoff, and cost and attention.
+
+**Weakest:** review timing. **What would raise it:** a code audit before a result enters the status document.
+
 ## What transfers
 
 The median can improve while the work gets worse, so I judge agents by the harm they do. I make the protocol mechanical, with snapshots, seals, guards, and gates in code, and I treat an agent's confidence as untrusted.

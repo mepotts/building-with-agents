@@ -104,6 +104,26 @@ The audit was read-only, over a frozen snapshot with no secrets or database acce
 
 The numbers are as of 2026-09-29, and the repository changes daily.
 
+## Rubric score
+
+Scored against the [rubric](https://github.com/mepotts/agent-operating-kit/blob/main/RUBRIC.md) on 2026-10-04. Each score is the level that fits best, and the gap is what keeps it from the next level.
+
+**Levels:** 1 ask and accept, 2 spec and spot-check, 3 agent-built checks with a separate reviewer, 4 checks decide what goes out.
+
+| Criterion | Score | Evidence | Gap |
+|---|---|---|---|
+| Spec | 4 | Each sprint spec sets the outcome, scope, and acceptance checks, and reviews require red-green proof. Sprint 116's tests killed 9 of 9 planted mutants. | Top level |
+| Context | 3 | Rules files where each rule came from a real failure (see the table above). | Claude sessions load the shared AGENTS.md only when the model opens it, which a review found on 2026-10-04. |
+| Checks | 4 | The exact-candidate gate, lint rules with failing and passing fixtures, and a "break it, confirm red" proof for every new gate. | Top level |
+| Review | 3 | A refuting reviewer on every sprint, three screenshot reviewers per gate run, and a whole-branch delta review that caught 6 regressions. | Findings aren't logged by reviewer yet, and review across vendors isn't the default. |
+| Evidence | 4 | Hashed candidates and screenshots, and checks that run against the shipped artifact and ignore the agent's summary. | Top level |
+| Risk and approvals | 3 | A five-tier risk scale, and each production command prompts me. | Enforcement leans on practice and manual mode more than on tool rules. |
+| Handoff | 3 | Each sprint spec ends with an execution record, and a fresh agent passed a twelve-question takeover exercise three times. | The live status sits in a long prose log that drifted from git. |
+| Failures to rules | 4 | Every incident in the table above became a rule or a gate. | Top level |
+| Cost and attention | 3 | Models routed by role after an audit of 54 launches. | The fleet hit usage limits repeatedly while one vendor's plan sat mostly idle. |
+
+**Weakest:** handoff and approvals. **What would raise them:** a git-tracked task ledger with the status board generated from it, and tool rules that stop every production command and every push to main for my approval.
+
 ## What transfers
 
 Agents make code cheap to write, so verification is the scarce part. I would make the protocol mechanical and give every check a way to fail. Each incident should become a rule. The reusable version is [the playbook](../playbook/README.md). Six gate screenshots (fixture data, third-party poster art) are in [images](../images/).

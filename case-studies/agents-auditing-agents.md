@@ -58,6 +58,24 @@ Every fix got a regression test. The suite grew from 327 to 485 tests, and rough
 
 No verdict moved in the passing direction. However, one blend test barely survived the corrected kernel (p = 0.048), and that is recorded too.
 
+## Rubric score
+
+Scored against the [rubric](https://github.com/mepotts/agent-operating-kit/blob/main/RUBRIC.md) on 2026-10-04. Each score is the level that fits best, and the gap is what keeps it from the next level.
+
+**Levels:** 1 ask and accept, 2 spec and spot-check, 3 agent-built checks with a separate reviewer, 4 checks decide what goes out.
+
+| Criterion | Score | Evidence | Gap |
+|---|---|---|---|
+| Checks | 3 | About 70 regression tests guard the fixes, and causality tests now catch the planted leaky variants. Before the audit this scored 1, because the four options engines behind every critical finding had zero tests. | The fixes aren't committed, so no gate runs them yet. |
+| Review | 3 | Four adversarial auditors in separate lanes plus a primary-source researcher, and the audit's own claims were corrected the same day. | The gate's auditor was cancelled mid-run, and a follow-up found three more bugs. |
+| Evidence | 3 | Every number was reproduced by running code or taken from a primary source. | The 485-test count was recorded when the work finished, and it isn't from a fresh run. |
+| Handoff | 2 | The remediation is in my working tree. | It isn't committed, so a fresh agent can't resume from it. |
+| Failures to rules | 3 | Every fix got a regression test, and the harness now warns on the two known ways to make it lie. | The new checks are uncommitted, like the fixes. |
+
+Not scored, because this write-up doesn't show them: spec, context, risk and approvals, and cost and attention.
+
+**Weakest:** handoff. **What would raise it:** committing the remediation with its tests, so anyone can rerun the numbers.
+
 ## Lessons
 
 I think none of the bugs were exotic, because each looked plausible in the code and in the results. An audit's own claims need the same skepticism as the code. A guard is only as good as the fault it has been shown to catch. An earlier 13-agent literature sweep had 21 fabricated claims, which its own fact-check pass caught.
