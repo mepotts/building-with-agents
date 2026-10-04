@@ -29,6 +29,7 @@ The [playbook](playbook/) is the operating method I distilled from these project
 - [An exact-candidate release gate](playbook/release-gate.md)
 - [A handoff runbook](playbook/handoff-runbook.md) for resuming work across agents and vendors
 - [A catalog of agent failure modes](playbook/failure-catalog.md), with the guardrail for each
+- [A rubric](https://github.com/mepotts/agent-operating-kit/blob/main/RUBRIC.md) that scores any work done with agents on nine criteria
 
 ## Agent operating kit
 
